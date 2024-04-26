@@ -14,10 +14,17 @@ public partial class Registro : ContentPage
 
     private void btnCalcula_Clicked(object sender, EventArgs e)
     {
+        if (txtMonto.Text == "" || txtMonto.Text == null)
+        {
+
+            DisplayAlert("Error", "El monto ingresado es incorrecto", "cerrar");
+            return;
+        }    
         float monto = float.Parse(txtMonto.Text);
         if (monto <= 0 || monto > 1500)
         {
             DisplayAlert("Error", "El monto inicial debe estar entre 1 y "+costo, "cerrar");
+            txtCuota.Text = "0";
         }
         else {
 
@@ -41,22 +48,27 @@ public partial class Registro : ContentPage
         if (nombre == "" || nombre==null)
         {
             DisplayAlert("error", "Ingrese un nombre", "cerrar");
+            return;
         }
         if (apellido == "" || apellido == null)
         {
             DisplayAlert("error", "Ingrese un apellido", "cerrar");
+            return;
         }
         if (edad == "" || edad==null)
         {
             DisplayAlert("error", "Ingrese un edad", "cerrar");
+            return;
         }
         if (fecha == "" || fecha==null)
         {
             DisplayAlert("error", "Ingrese un fecha", "cerrar");
+            return;
         }
         if (pck_pais.SelectedIndex < 0)
         {
             DisplayAlert("error", "Seleccione un pais", "cerrar");
+            return;
         }
         else {
             pais = pck_pais.SelectedItem.ToString();
@@ -64,6 +76,7 @@ public partial class Registro : ContentPage
         if (pck_ciudad.SelectedIndex < 0)
         {
             DisplayAlert("error", "Seleccione una ciudad", "cerrar");
+            return;
         }
         else {
 
@@ -73,13 +86,13 @@ public partial class Registro : ContentPage
         if (monto == "" || monto==null)
         {
             DisplayAlert("error", "Ingrese un monto inicial", "cerrar");
+            return;
             cuota1 = 0;
         }
         else {  cuota1 = double.Parse(txtCuota.Text); }
 
         string cuota = txtCuota.Text;
         double total = (cuota1 * 4)+double.Parse(monto);
-
         string[] datos = [nombre,apellido,edad,fecha,ciudad,pais,monto,cuota,total.ToString()];
         Navigation.PushAsync(new vistas.Resumen(datos, usuarioMaster));
 

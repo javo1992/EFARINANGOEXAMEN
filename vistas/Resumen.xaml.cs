@@ -19,6 +19,15 @@ public partial class Resumen : ContentPage
 
     private void btnCerrarSession_Clicked(object sender, EventArgs e)
     {
+        txtNombre.Text = "";
+        txtApellido.Text = "";
+        txtEdad.Text = "";
+        txtFecha.Text = "";
+        txtCiudad.Text = "";
+        txtPais.Text = "";
+        txtMonto.Text = "";
+        txtCuota.Text = "";
+        txtTotal.Text = "";
         Navigation.PushAsync(new vistas.Login());
 
     }
