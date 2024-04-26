@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EFARINANGOEXAMEN.vistas.Acerca"
+             Title="Acerca">
+    <VerticalStackLayout Margin="25" Padding="20">
+        <Label 
+            Text="ACERCA DE"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontSize="20" TextColor="Red"/>
+        <Label Text="Estudiante"></Label>
+        <Label Text="Edison Farinango"></Label>
+        <Label Text="Curso:"></Label>
+        <Label Text="7mo"></Label>
+        <Label Text="Carrera"></Label>
+        <Label Text="Ingenieria Informatica"></Label>
+    </VerticalStackLayout>
+</ContentPage>
